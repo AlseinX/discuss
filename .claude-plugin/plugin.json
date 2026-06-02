@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "discuss",
+  "displayName": "Discuss",
+  "description": "A discussion workflow skill for clarifying ambiguous tasks into well-defined outcomes before execution.",
+  "version": "0.1.0",
+  "author": {
+    "name": "AlseinX",
+    "email": "xyh951115@live.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "discussion",
+    "planning",
+    "requirements",
+    "specification"
+  ]
+}

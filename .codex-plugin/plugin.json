@@ -1,0 +1,30 @@
+{
+  "name": "discuss",
+  "version": "0.1.0",
+  "description": "A discussion workflow skill for clarifying ambiguous tasks into well-defined outcomes before execution.",
+  "author": {
+    "name": "AlseinX",
+    "email": "xyh951115@live.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "discussion",
+    "planning",
+    "requirements",
+    "specification"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Discuss",
+    "shortDescription": "Clarify ambiguous tasks before execution.",
+    "longDescription": "Discuss helps Codex guide users through structured clarification, option analysis, and decision capture before producing a plan, specification, definition, or implementation target.",
+    "developerName": "AlseinX",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Use $discuss:discuss to clarify this topic into a defined outcome."
+    ]
+  }
+}
