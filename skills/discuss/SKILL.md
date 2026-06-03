@@ -37,6 +37,16 @@ Work breadth-first from high-level decisions toward detail.
 
 Prefer resolving all major points at the same level of precision before drilling into one area. Follow the user's requested order when they explicitly choose a different direction.
 
+## Numbered Confirmations
+
+When asking the user to confirm multiple proposals or answer multiple questions in one turn, number every item with stable labels so the user can reply by number.
+
+- Keep the numbers stable while those items remain pending.
+- If the user replies to only some numbered items, discuss only the answered items until each one reaches a final decision.
+- Do not discuss unanswered pending items while settling the items the user chose to answer.
+- Do not forget unanswered pending items.
+- After the answered items are settled, ask about the unanswered pending items before introducing new questions, unless a pending item was already resolved or disappeared because the discussion changed.
+
 ## Subagent Requirement
 
 Use subagents for all exploration work, including web research, repository inspection, file reads, file writes, command execution, and validation runs.
