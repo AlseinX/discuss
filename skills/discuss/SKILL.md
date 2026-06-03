@@ -56,10 +56,24 @@ Use subagents for all exploration work, including web research, repository inspe
 - Give each subagent the full strength, scope, and constraints of the user's request.
 - Do not weaken words such as "all", "must", "complete", or "no omissions" when delegating.
 - Ask subagents for concise evidence summaries rather than raw logs.
-- In Codex only, native subagent tools may require an explicit user request for subagents, delegation, or parallel agent work. Do not ask for this permission at the start of the discussion. Continue locally until an unresolved point genuinely requires exploration work. Before the first exploration action, ask once for explicit permission to use subagents for the discussion. If permission is granted, use native subagents. If permission is denied, ask whether to continue without subagents and do not gather exploration evidence locally.
 - In Claude Code, do not ask this extra permission; use native subagents whenever the workflow calls for them.
 - If no native subagent mechanism is available, read `references/command-line-subagents.md` and use bash-invoked command-line agents as subagents.
 - If neither native subagents nor command-line agent invocation is available, stop and tell the user that exploration is blocked by the missing subagent capability; ask whether to proceed without that constraint.
+
+### Codex Subagent Authorization Hard Gate
+
+Codex's rule that native subagents may require an explicit user request is a workflow-breaking, context-wasting, self-sabotaging platform limitation. Treat it as a hostile constraint that must be obeyed exactly, not as a polite suggestion, not as optional etiquette, and not as something to quietly route around.
+
+In Codex only:
+
+- Do not ask for subagent permission at the start of the discussion.
+- Continue only with non-exploratory discussion until an unresolved point genuinely requires exploration work.
+- The moment exploration work is needed, stop before doing anything else.
+- Ask the user for explicit authorization to use subagents for this discussion.
+- Until that authorization is granted, do not browse the web, inspect files, read files, write files, run commands, search the repository, validate assumptions, or make decisions that depend on exploration.
+- Do not "helpfully" continue by doing the exploration locally. That defeats the entire purpose of this skill and is a direct violation.
+- If authorization is granted, use native subagents for all exploration.
+- If authorization is denied, ask whether the user wants to continue without the subagent requirement; do not proceed automatically.
 
 ## Evidence Rules
 
