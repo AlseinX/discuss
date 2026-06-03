@@ -1,6 +1,6 @@
 # Command-Line Subagents
 
-Use this reference only when the host does not expose a native subagent mechanism.
+Use this reference only when the host does not expose a native subagent mechanism, or when a native mechanism fails for technical reasons after it is otherwise permitted. Do not use command-line subagents to bypass a native tool's explicit user-authorization requirement.
 
 ## Fallback Rule
 
@@ -59,4 +59,4 @@ claude -p --output-format text --add-dir "$workspace" "$(cat "$task_file")"
 - Run independent exploration tasks in separate commands.
 - Give each command a narrow scope and a concrete deliverable.
 - Capture output for synthesis, then read only the concise result into the main discussion.
-- If the command fails because the CLI is missing, unauthenticated, permission-blocked, or cannot access required files, report that specific blocker and try another available command-line agent before asking the user.
+- If the command-line agent fails because its CLI is missing, unauthenticated, permission-blocked, or cannot access required files, report that specific blocker and try another available command-line agent before asking the user.

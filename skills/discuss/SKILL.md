@@ -29,7 +29,7 @@ Work breadth-first from high-level decisions toward detail.
 1. List the current knowns and unknowns at the active level of detail.
 2. Pick one unresolved point to discuss.
 3. Ask for the user's intent on that point.
-4. If the user cannot answer or asks for help, use subagents to investigate feasible options.
+4. If the user cannot answer or asks for help, use subagents to investigate feasible options. Do not gather exploration evidence locally. In Codex, if subagent use needs explicit user authorization and it has not been granted, ask for that authorization only when this step is actually reached.
 5. Present all reasonable options, a recommended priority order, and tradeoffs.
 6. Ask the user to choose or revise the options.
 7. After a choice is made, check for hard blockers, contradictions, or infeasible assumptions.
@@ -42,9 +42,12 @@ Prefer resolving all major points at the same level of precision before drilling
 Use subagents for all exploration work, including web research, repository inspection, file reads, file writes, command execution, and validation runs.
 
 - Keep the main agent focused on questions, decisions, and synthesis.
+- Exploration work means any fact gathering outside the current conversation, including small checks such as listing files, reading one file, running a simple command, searching a repo, browsing the web, or validating an assumption. The main agent must not perform exploration work locally.
 - Give each subagent the full strength, scope, and constraints of the user's request.
 - Do not weaken words such as "all", "must", "complete", or "no omissions" when delegating.
 - Ask subagents for concise evidence summaries rather than raw logs.
+- In Codex only, native subagent tools may require an explicit user request for subagents, delegation, or parallel agent work. Do not ask for this permission at the start of the discussion. Continue locally until an unresolved point genuinely requires exploration work. Before the first exploration action, ask once for explicit permission to use subagents for the discussion. If permission is granted, use native subagents. If permission is denied, ask whether to continue without subagents and do not gather exploration evidence locally.
+- In Claude Code, do not ask this extra permission; use native subagents whenever the workflow calls for them.
 - If no native subagent mechanism is available, read `references/command-line-subagents.md` and use bash-invoked command-line agents as subagents.
 - If neither native subagents nor command-line agent invocation is available, stop and tell the user that exploration is blocked by the missing subagent capability; ask whether to proceed without that constraint.
 
